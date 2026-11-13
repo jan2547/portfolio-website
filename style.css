@@ -1,0 +1,275 @@
+/* My portfolio colors */
+:root {
+    --bg-color: #151B54;       /* Night Blue */
+    --hero-color: #202B64;
+    --card-color: #29376E;
+
+    --azure: #4863A0;
+    --slate: #737CA1;
+    --accent: #728FCE;         /* Light Purple Blue */
+    --primary: #4169E1;        /* Royal Blue */
+
+    --light-blue: #AEBDED;
+    --text-color: #FFFFFF;
+    --muted-color: #D0D6EB;
+}
+/* Basic page setup */
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    padding: 20px 35px;/* space inside the page edges*/
+}
+/*====Navigation Bar=====*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 30px;
+}
+.logo{
+    color: var(--light-blue);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* keep the navigation links in one row */
+.nav-links{
+    display: flex;
+    gap: 30px;
+}
+.nav-links a{
+    color: var(--muted-color);
+    text-decoration: none;
+    transition:color 0.3s;
+}
+.nav-links a:hover{
+    color: var(--light-blue);
+}
+
+
+
+/* ===== Home section ===== */
+
+#home{
+    background-color: var(--hero-color);
+    padding: 60px 40px;
+    margin-top: 30px;
+    border-radius: 25px;
+    border: 1px solid var(--azure);
+}
+.intro{
+    color: var(--light-blue);
+    font-size: 14px;
+    letter-spacing: 2px;
+
+}
+#home h1{
+    color: var(--text-color);
+    font-size: 60px;
+    line-height: 1.2;
+}
+/* make the second line a different color */
+#home h1 span{
+    color: var(--accent);
+}
+.description{
+    color: var(--muted-color);
+    font-size: 16px;
+}
+
+/* ===== Buttons ===== */
+.hero-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    margin-top: 30px;
+}
+/* styles shared by both buttons */
+.btn{
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    color:white;
+    transition:0.3s;
+}
+/* view Projects button */
+.primary{
+    background-color: var(--primary);
+}
+.primary:hover{
+    background-color: var(--accent);
+}
+/* GitHub button */
+.secondary{
+    border: 1px solid var(--slate);
+}
+.secondary:hover{
+    background-color: var(--azure);
+}
+/* ===== Featured projects ===== */
+#projects{
+    margin-top: 30px;
+}
+
+#projects h2{
+    margin-top: 20px;
+}
+
+/* Project layout for desktop */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Tablets: two cards per row */
+@media (max-width: 1000px) {
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Phones: one card per row */
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Keep space between the project card elements */
+.project-card{
+    background-color: var(--card-color);
+    padding: 25px 30px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+/* Remove default margins so the gap controls spacing */
+.project-card > * {
+    margin: 0;
+}
+.project-card h3{
+    margin-top: 0;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-color);
+
+}
+.project-card p{
+    color: var(--muted-color);
+    margin-bottom: 0;
+}
+/* Make the project descriptions easier to read */
+.project-card p {
+    line-height: 1.5;
+}
+/* Keep the GitHub link on the left */
+.project-card .code-link {
+    align-self: flex-start;
+    margin-top: 5px;
+}
+/* subtle effect when hovering over a project */
+.project-card:hover {
+    border-color: var(--azure);
+    transform: translateY(-5px);
+}
+/* ===== Smaller screens ===== */
+
+@media (max-width: 700px) {
+    body {
+        padding: 15px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 20px 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    #home {
+        padding: 45px 25px;
+    }
+
+    #home h1 {
+        font-size: 36px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Temporary project image placeholders */
+.project-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    background-color: var(--hero-color);
+    border: 1px dashed var(--slate);
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--light-blue);
+    font-size: 14px;
+}
+
+/* Technology names */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.tech-tag {
+    background-color: #40548B;
+    color: #E5EAFF;
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+/* Links inside project cards */
+.project-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--light-blue);
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* GitHub link */
+.code-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 15px;
+    color: var(--light-blue);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.code-link:hover {
+    color: white;
+}
