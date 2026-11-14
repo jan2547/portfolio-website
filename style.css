@@ -122,25 +122,59 @@ body{
 #projects h2{
     margin-top: 20px;
 }
-
-/* Project layout for desktop */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+/* project heading and arrows */
+.projects-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.projects-heading h2{
+    margin:0;
+}
+.projects-control {
+    display: flex;
+    gap:10px;
+}
+/* arrow buttons */
+.projects-control button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--slate);
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Tablets: two cards per row */
+.projects-control button:hover {
+    background-color: var(--azure);
+}
+
+/* Project layout for desktop/ horizontal scrolling */
+.project-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 40px)/3);
+    gap: 20px;
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+    padding-top: 12px;
+}
+
+/* Tablets: two cards visible  */
 @media (max-width: 1000px) {
     .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+       grid-auto-columns: calc((100% - 20px)/2);
     }
 }
 
-/* Phones: one card per row */
+/* Phones: one card visible */
 @media (max-width: 600px) {
     .project-grid {
-        grid-template-columns: 1fr;
+        grid-auto-columns:100%;
     }
 }
 
@@ -154,6 +188,10 @@ body{
     display: flex;
     flex-direction: column;
     gap: 18px;
+    scroll-snap-align: start;
+    min-width: 0;
+
+
 }
 /* Remove default margins so the gap controls spacing */
 .project-card > * {

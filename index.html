@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
   <link rel ="stylesheet" href ="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 <!-- Navigation bar -->
@@ -39,7 +40,21 @@
      </section>
      <!-- --Projects section ---->
      <section id="projects">
-       <h2>Projects</h2>
+       <!-- title and scroll buttons -->
+       <div class="projects-heading">
+         <h2>Projects</h2>
+
+         <div class="projects-control">
+           <button id="scroll-left" type="button" aria-label="Scroll left">
+             &#10094;
+           </button>
+
+           <button id="scroll-right" type="button" aria-label="Scroll right">
+             &#10095;
+           </button>
+         </div>
+       </div>
+
        <div class="project-grid">
          <!-- Project 1: Autonomous Rover -->
          <div class="project-card">
@@ -252,8 +267,6 @@
              View Code
            </a>
          </div>
-
-
 
 
        </div>
