@@ -1,142 +1,173 @@
-/* My portfolio colors */
-:root {
-    --bg-color: #151B54;       /* Night Blue */
-    --hero-color: #202B64;
-    --card-color: #29376E;
 
+/* ===== colors ===== */
+:root {
+    --bg-color: #151B54;       /* page background */
+    --hero-color: #202B64;     /* home section */
+    --card-color: #29376E;     /* project cards */
     --azure: #4863A0;
     --slate: #737CA1;
-    --accent: #728FCE;         /* Light Purple Blue */
-    --primary: #4169E1;        /* Royal Blue */
-
+    --accent: #728FCE;
+    --primary: #4169E1;
     --light-blue: #AEBDED;
     --text-color: #FFFFFF;
     --muted-color: #D0D6EB;
 }
-/* Basic page setup */
+
+/* include padding and borders in element sizes */
 * {
     box-sizing: border-box;
 }
 
-body{
+/* main page style */
+body {
     margin: 0;
+    padding: 20px 35px;
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: Arial, sans-serif;
-    padding: 20px 35px;/* space inside the page edges*/
 }
-/*====Navigation Bar=====*/
-.navbar{
+
+/* ============== navbar ==============  */
+
+/* position logo and links on opposite sides */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     padding: 25px 30px;
 }
-.logo{
+
+/* portfolio logo */
+.logo {
     color: var(--light-blue);
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
 }
-/* keep the navigation links in one row */
-.nav-links{
+
+/* keep navigation links in a row */
+.nav-links {
     display: flex;
     gap: 30px;
 }
-.nav-links a{
+
+/* navigation link style */
+.nav-links a {
     color: var(--muted-color);
     text-decoration: none;
-    transition:color 0.3s;
+    transition: color 0.3s;
 }
-.nav-links a:hover{
+
+/* change link color on hover */
+.nav-links a:hover {
     color: var(--light-blue);
 }
 
 
+/* ==============  home ==============  */
 
-/* ===== Home section ===== */
-
-#home{
+/* main introduction box */
+#home {
     background-color: var(--hero-color);
     padding: 60px 40px;
     margin-top: 30px;
     border-radius: 25px;
     border: 1px solid var(--azure);
 }
-.intro{
+
+/* small text above the heading */
+.intro {
     color: var(--light-blue);
     font-size: 14px;
     letter-spacing: 2px;
-
 }
-#home h1{
+
+/* main heading */
+#home h1 {
     color: var(--text-color);
     font-size: 60px;
-    line-height: 1.2;
+    line-height: 1.2; /* spacing between lines */
 }
-/* make the second line a different color */
-#home h1 span{
+
+/* second line of heading */
+#home h1 span {
     color: var(--accent);
 }
-.description{
+
+/* text below the heading */
+.description {
     color: var(--muted-color);
     font-size: 16px;
 }
 
-/* ===== Buttons ===== */
-.hero-buttons{
+
+/* ==============  home buttons ==============  */
+
+/* put the two buttons next to each other */
+.hero-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap:15px;
+    gap: 15px;
     margin-top: 30px;
 }
-/* styles shared by both buttons */
-.btn{
+
+/* style shared by both buttons */
+.btn {
     display: inline-block;
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
-    color:white;
-    transition:0.3s;
+    color: white;
+    transition: 0.3s;
 }
-/* view Projects button */
-.primary{
+
+/* view projects button */
+.primary {
     background-color: var(--primary);
 }
-.primary:hover{
+
+.primary:hover {
     background-color: var(--accent);
 }
-/* GitHub button */
-.secondary{
+
+/* github button */
+.secondary {
     border: 1px solid var(--slate);
 }
-.secondary:hover{
+
+.secondary:hover {
     background-color: var(--azure);
 }
-/* ===== Featured projects ===== */
-#projects{
+
+
+/* ============== projects ============== */
+
+/* space above the projects section */
+#projects {
     margin-top: 30px;
 }
 
-#projects h2{
-    margin-top: 20px;
-}
-/* project heading and arrows */
-.projects-heading{
+/* position title on left and arrows on right */
+.projects-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
-.projects-heading h2{
-    margin:0;
+
+/* remove extra space around title */
+.projects-heading h2 {
+    margin: 0;
 }
+
+/* keep arrow buttons next to each other */
 .projects-control {
     display: flex;
-    gap:10px;
+    gap: 10px;
 }
-/* arrow buttons */
+
+/* left and right arrow buttons */
 .projects-control button {
     width: 40px;
     height: 40px;
@@ -148,111 +179,101 @@ body{
     transition: background-color 0.3s;
 }
 
+/* arrow hover color */
 .projects-control button:hover {
     background-color: var(--azure);
 }
 
-/* Project layout for desktop/ horizontal scrolling */
+/* fade arrows when scrolling isn't possible */
+.projects-control button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.projects-control button:disabled:hover {
+    background-color: transparent;
+}
+
+
+/* ============== project gallery ==============  */
+
+/* horizontal scrolling, 3 cards visible */
 .project-grid {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc((100% - 40px)/3);
+    grid-auto-columns: calc((100% - 40px) / 3);
     gap: 20px;
-    overflow-x:auto;
+
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding-bottom: 20px;
+
     padding-top: 12px;
+    padding-bottom: 20px;
 }
 
-/* Tablets: two cards visible  */
+/* tablet: 2 cards visible */
 @media (max-width: 1000px) {
     .project-grid {
-       grid-auto-columns: calc((100% - 20px)/2);
+        grid-auto-columns: calc((100% - 20px) / 2);
     }
 }
 
-/* Phones: one card visible */
+/* phone: 1 card visible */
 @media (max-width: 600px) {
     .project-grid {
-        grid-auto-columns:100%;
+        grid-auto-columns: 100%;
     }
 }
 
-/* Keep space between the project card elements */
-.project-card{
+
+/* ==============  project cards ==============  */
+
+/* style for each project card */
+.project-card {
     background-color: var(--card-color);
     padding: 25px 30px;
     border-radius: 20px;
     border: 1px solid transparent;
-    transition: 0.3s;
+
     display: flex;
     flex-direction: column;
     gap: 18px;
+
     scroll-snap-align: start;
     min-width: 0;
-
-
+    transition: 0.3s;
 }
-/* Remove default margins so the gap controls spacing */
+
+/* let gap control spacing inside cards */
 .project-card > * {
     margin: 0;
 }
-.project-card h3{
-    margin-top: 0;
+
+/* project name */
+.project-card h3 {
     font-size: 26px;
     font-weight: 600;
     color: var(--text-color);
+    margin: 0;
+}
 
-}
-.project-card p{
-    color: var(--muted-color);
-    margin-bottom: 0;
-}
-/* Make the project descriptions easier to read */
+/* project description */
 .project-card p {
+    color: var(--muted-color);
+    margin: 0;
     line-height: 1.5;
 }
-/* Keep the GitHub link on the left */
-.project-card .code-link {
-    align-self: flex-start;
-    margin-top: 5px;
-}
-/* subtle effect when hovering over a project */
+
+/* highlight card when hovering */
 .project-card:hover {
     border-color: var(--azure);
     transform: translateY(-5px);
 }
-/* ===== Smaller screens ===== */
 
-@media (max-width: 700px) {
-    body {
-        padding: 15px;
-    }
 
-    .navbar {
-        flex-wrap: wrap;
-        padding: 20px 10px;
-    }
+/* ============== project images ==============  */
 
-    .nav-links {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    #home {
-        padding: 45px 25px;
-    }
-
-    #home h1 {
-        font-size: 36px;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Temporary project image placeholders */
+/* placeholder until i add project pictures */
 .project-image {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -269,12 +290,68 @@ body{
     font-size: 14px;
 }
 
-/* Technology names */
+/* display real images without stretching */
+img.project-image {
+    display: block;
+    object-fit: cover;
+}
+
+/* clickable project video preview */
+.project-play {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* play icon in the center */
+.project-play::after {
+    content: "▶";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+    background: rgba(21, 27, 84, 0.85);
+    color: white;
+    font-size: 22px;
+}
+
+/* highlight play button when using keyboard */
+.project-play:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* keep videos the same size as images */
+video.project-image {
+    display: block;
+    object-fit: cover;
+}
+
+
+
+/* ============== tech stack ============== */
+
+/* container for project technologies */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
+
+/* rounded labels for each technology */
 .tech-tag {
     background-color: #40548B;
     color: #E5EAFF;
@@ -283,31 +360,58 @@ body{
     font-size: 14px;
 }
 
-/* Links inside project cards */
-.project-card a {
-    display: inline-block;
-    margin-top: 15px;
-    color: var(--light-blue);
-    text-decoration: none;
-}
 
-.project-card a:hover {
-    color: white;
-    text-decoration: underline;
-}
+/* ============== github link ============== */
 
-/* GitHub link */
-.code-link {
+/* keep github icon and text in one row */
+.project-card .code-link {
     display: inline-flex;
     align-items: center;
+    align-self: flex-start;
     gap: 10px;
 
-    margin-top: 15px;
+    margin-top: 5px;
     color: var(--light-blue);
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.code-link:hover {
+/* change link color on hover */
+.project-card .code-link:hover {
     color: white;
+    text-decoration: underline;
 }
+
+
+/* ==============  smaller screens==============  */
+
+/* adjust page spacing and text on mobile */
+@media (max-width: 700px) {
+    body {
+        padding: 15px;
+    }
+
+    /* allow navbar items to wrap */
+    .navbar {
+        flex-wrap: wrap;
+        padding: 20px 10px;
+    }
+
+    /* wrap links if there isn't enough space */
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    /* make home section smaller */
+    #home {
+        padding: 45px 25px;
+    }
+
+    /* smaller heading for mobile */
+    #home h1 {
+        font-size: 36px;
+    }
+}
+
+

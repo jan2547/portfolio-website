@@ -55,64 +55,28 @@
          </div>
        </div>
 
-       <div class="project-grid">
-         <!-- Project 1: Autonomous Rover -->
+
+       <!-- projects will be added here using JavaScript -->
+       <div class="project-grid"></div>
+
+       <!-- template for each project card -->
+       <template id="project-template">
          <div class="project-card">
-           <!-- Replace this with a real photo later -->
+
            <div class="project-image">
              Image coming soon
            </div>
-           <h3> Autonomous Mini Rover</h3>
-           <p>An autonomous robot that detects obstacles
-             and controls its motors using Arduino.</p>
-           <!-- tech stack -->
-           <div class="tech-stack">
-             <span class="tech-tag">Arduino</span>
-             <span class="tech-tag">C++</span>
-             <span class="tech-tag">Robotics</span>
-           </div>
 
-           <!-- github link -->
-           <a href="https://github.com/jan2547/SproutFarm-Public"
-              class="code-link"
+           <h3 class="project-name"></h3>
+           <p class="project-description"></p>
+
+           <div class="tech-stack"></div>
+
+           <a class="code-link"
               target="_blank"
               rel="noopener noreferrer">
-             <!-- GitHub logo drawing -->
-             <svg width="22" height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true">
-               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-             </svg>
-             View Code
-           </a>
-         </div>
 
-         <!-- Project 2: SproutFarm -->
-         <div class="project-card">
-           <!-- Replace this with a game screenshot later -->
-           <div class="project-image">
-             Image coming soon
-           </div>
-           <h3>SproutFarm</h3>
-           <p>A 2D farming game built with Godot,
-             featuring player movement and an interactive world.</p>
-           <!-- tech stack -->
-           <div class="tech-stack">
-             <span class="tech-tag">Godot</span>
-             <span class="tech-tag">GDScript</span>
-           </div>
-
-           <!-- github link -->
-           <a href="https://github.com/jan2547/SproutFarm-Public"
-              class="code-link"
-              target="_blank"
-              rel="noopener noreferrer">
-             <!-- GitHub logo drawing -->
+             <!-- github icon -->
              <svg width="22" height="22"
                   viewBox="0 0 24 24"
                   fill="none"
@@ -126,152 +90,13 @@
 
              View Code
            </a>
+
          </div>
-         <!-- Project 3:  -->
-         <div class="project-card">
-           <!-- Replace this with a real photo later -->
-           <div class="project-image">
-             Image coming soon
-           </div>
-           <h3>  project name </h3>
-           <p>description</p>
-           <!-- tech stack -->
-           <div class="tech-stack">
-             <span class="tech-tag">some tag</span>
-             <span class="tech-tag">some tag</span>
-             <span class="tech-tag">some tag</span>
-           </div>
+       </template>
 
-           <!-- github link -->
-           <a href=" github link"
-              class="code-link"
-              target="_blank"
-              rel="noopener noreferrer">
-             <!-- GitHub logo drawing -->
-             <svg width="22" height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true">
-               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-             </svg>
-             View Code
-           </a>
-         </div>
-
-         <!-- Project 4: -->
-         <div class="project-card">
-           <!-- Replace this with a real photo later -->
-           <div class="project-image">
-             Image coming soon
-           </div>
-           <h3>  project name </h3>
-           <p>description</p>
-           <!-- tech stack -->
-           <div class="tech-stack">
-             <span class="tech-tag">some tag</span>
-             <span class="tech-tag">some tag</span>
-             <span class="tech-tag">some tag</span>
-           </div>
-
-           <!-- github link -->
-           <a href=" github link"
-              class="code-link"
-              target="_blank"
-              rel="noopener noreferrer">
-             <!-- GitHub logo drawing -->
-             <svg width="22" height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true">
-               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-             </svg>
-             View Code
-           </a>
-         </div>
-
-
-         <!-- Project 5: -->
-         <div class="project-card">
-           <!-- Replace this with a real photo later -->
-           <div class="project-image">
-             Image coming soon
-           </div>
-           <h3>  project name </h3>
-           <p>description</p>
-           <!-- tech stack -->
-           <div class="tech-stack">
-             <span class="tech-tag">some tag</span>
-             <span class="tech-tag">some tag</span>
-             <span class="tech-tag">some tag</span>
-           </div>
-
-           <!-- github link -->
-           <a href=" github link"
-              class="code-link"
-              target="_blank"
-              rel="noopener noreferrer">
-             <!-- GitHub logo drawing -->
-             <svg width="22" height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true">
-               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-             </svg>
-             View Code
-           </a>
-         </div>
-
-         <!-- Project 6: -->
-         <div class="project-card">
-           <!-- Replace this with a real photo later -->
-           <div class="project-image">
-             Image coming soon
-           </div>
-           <h3>  project name </h3>
-           <p>description</p>
-           <!-- tech stack -->
-           <div class="tech-stack">
-             <span class="tech-tag">some tag</span>
-             <span class="tech-tag">some tag</span>
-             <span class="tech-tag">some tag</span>
-           </div>
-
-           <!-- github link -->
-           <a href=" github link"
-              class="code-link"
-              target="_blank"
-              rel="noopener noreferrer">
-             <!-- GitHub logo drawing -->
-             <svg width="22" height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true">
-               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-             </svg>
-             View Code
-           </a>
-         </div>
-
-
-       </div>
      </section>
      <!-- TODO: Add About and Contact sections later -->
+
 
 
 
